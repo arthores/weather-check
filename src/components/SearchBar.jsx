@@ -8,11 +8,18 @@ function SearchBar () {
       className="section-search"
     >
       <input
+        list="cities"
         type="text"
         className="input-search"
+        autoComplete="off"
       />
+      <datalist id="cities" >
+        <option value="gêlo" />
+        <option value="Càrro" />
+        <option value="testado" />
+      </datalist>
       <button
-        type="button"
+        type="submit"
         className="btn-search"
       >
         <GoSearch

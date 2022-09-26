@@ -1,4 +1,8 @@
-import { InCities } from "./cities";
+export interface InCities {
+  city: string,
+  lan: number,
+  lon: number,
+}
 
 export const locations: InCities[] = [
   {

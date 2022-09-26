@@ -17,7 +17,7 @@ function App () {
          < SearchBar />
       </section>
       {/* <div>
-        Teste
+        Futura fetuare de mudança de idioma
       </div> */}
     </main>
   )
