@@ -3,11 +3,11 @@ import WeatherContext from "./context";
 
 function Provider({ children }) {
 
-  const [teste, useTeste] = useState('');
+  const [input, setInput] = useState('');
 
   const store = {
-    teste,
-    useTeste,
+    input,
+    setInput,
   }
 
   return (

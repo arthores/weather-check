@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import { GoSearch } from 'react-icons/go';
+import WeatherContext from "../data/context";
+import { locations } from "../data/locations.ts";
 import '../styles/searchBar.css'
 
 function SearchBar () {
+
+  const {
+    input,
+    setInput,
+  } = useContext(WeatherContext);
+
+  const locationNames = locations.map((elemt) => elemt.city);
+
+  const handleChange = (e) => setInput(e.target.value);
+
   return (
     <section
       className="section-search"
@@ -11,12 +23,16 @@ function SearchBar () {
         list="cities"
         type="text"
         className="input-search"
-        autoComplete="off"
+        autoComplete="on"
+        value={ input }
+        onChange={ handleChange }
       />
       <datalist id="cities" >
-        <option value="gêlo" />
-        <option value="Càrro" />
-        <option value="testado" />
+        { locationNames.map((e) => (
+          <option
+            key={ Object.keys(e) }
+            value={ e } />
+        )) }
       </datalist>
       <button
         type="submit"
