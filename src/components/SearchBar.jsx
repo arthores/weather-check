@@ -10,6 +10,7 @@ function SearchBar () {
     input,
     setInput,
     setCoordinates,
+    setSearch,
   } = useContext(WeatherContext);
 
   useEffect(() => {
@@ -34,6 +35,10 @@ function SearchBar () {
     setInput(e.target.value);
   };
 
+  const searchCity = () => {
+    setSearch(true);
+  }
+
   return (
     <section
       className="section-search"
@@ -56,13 +61,14 @@ function SearchBar () {
       <button
         type="submit"
         className="btn-search"
+        onClick={ searchCity }
       >
         <GoSearch
           className="icon-search"
         />
       </button>
     </section>
-  )
-}
+  );
+};
 
 export default SearchBar;
