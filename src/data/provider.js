@@ -4,10 +4,13 @@ import WeatherContext from "./context";
 function Provider({ children }) {
 
   const [input, setInput] = useState('');
+  const [coordinates, setCoordinates] = useState({});
 
   const store = {
     input,
+    coordinates,
     setInput,
+    setCoordinates,
   }
 
   return (

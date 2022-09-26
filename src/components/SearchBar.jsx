@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { GoSearch } from 'react-icons/go';
 import WeatherContext from "../data/context";
 import { locations } from "../data/locations.ts";
@@ -9,11 +9,30 @@ function SearchBar () {
   const {
     input,
     setInput,
+    setCoordinates,
   } = useContext(WeatherContext);
 
-  const locationNames = locations.map((elemt) => elemt.city);
+  useEffect(() => {
+    // Small delay to not overload calls
+    setTimeout(() => {
+      select();
+      setCoordinates(select());
+    }, 3000);
+  }, [input])
 
-  const handleChange = (e) => setInput(e.target.value);
+  const select = () => {
+    let city = {};
+    locations.map((e) => {
+      if (input === e.city) {
+        city = e;
+      };
+  });
+  return city;
+  };
+
+  const handleChange = (e) => {
+    setInput(e.target.value);
+  };
 
   return (
     <section
@@ -28,10 +47,10 @@ function SearchBar () {
         onChange={ handleChange }
       />
       <datalist id="cities" >
-        { locationNames.map((e) => (
+        { locations.map((e) => (
           <option
             key={ Object.keys(e) }
-            value={ e } />
+            value={ e.city } />
         )) }
       </datalist>
       <button
