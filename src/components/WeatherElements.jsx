@@ -1,15 +1,12 @@
 import React from "react";
 
-function WeatherElements() {
+function WeatherElements({ children }) {
   return (
-    <section>
-      <aside>
-        estou aqui
-      </aside>
-      <aside>
-        estou aqui
-      </aside>
-    </section>
+    <div
+      className="weather-icon"
+    >
+      { children } futuro icon
+    </div>
   );
 };
 

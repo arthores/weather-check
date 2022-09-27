@@ -18,7 +18,7 @@ function App () {
       setTimeout(async () => {
         const result = await getWeather(coordinates.lan, coordinates.lon);
         console.log(result);
-      }, 2000);
+      }, 1000);
     };
     setSearch(false);
   }, [search]);
@@ -30,8 +30,16 @@ function App () {
       <section
         className="section-box"
       >
+        <p> {coordinates.city} </p>
          <SearchBar />
-         <WeatherElements />
+         <aside>
+          <WeatherElements />
+          <WeatherElements />
+        </aside>
+        <aside>
+          <WeatherElements />
+          <WeatherElements />
+        </aside>
       </section>
       {/* <div>
         Futura fetuare de mudança de idioma

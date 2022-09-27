@@ -14,12 +14,11 @@ function SearchBar () {
   } = useContext(WeatherContext);
 
   useEffect(() => {
-    // Small delay to not overload calls
-    setTimeout(() => {
+    if (input !== '') {
       select();
-      setCoordinates(select());
-    }, 3000);
-  }, [input])
+      setCoordinates(select())
+    };
+  }, [input]);
 
   const select = () => {
     let city = {};
@@ -35,9 +34,7 @@ function SearchBar () {
     setInput(e.target.value);
   };
 
-  const searchCity = () => {
-    setSearch(true);
-  }
+  const searchCity = () => setSearch(true);
 
   return (
     <section
