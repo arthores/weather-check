@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import WeatherContext from "../data/context";
-import searchLogo from '../icons/searchLogo.png';
+import sunny from '../icons/sunny.png';
+import cloudsNight from '../icons/cloudsNight.png'
 import '../styles/weatherInfo.css';
 
 function Weather () {
@@ -12,13 +13,21 @@ function Weather () {
   const weatherIcon = [
     {
       weather: 'Clear',
-      icon: searchLogo
+      icon: sunny
+    },
+    {
+      weather: 'Clouds',
+      icon: cloudsNight
     },
   ];
 
   const renderCondition = Object.keys(api).length;
+  const weather = renderCondition > 0 ? api.weather[0].main : null;
 
-    console.log();
+  const caseIcon = weatherIcon.filter((e) => e.weather === weather);
+  const icon = caseIcon.length > 0 ? caseIcon[0].icon : null;
+  console.log(caseIcon);
+
   return (
     <section
       className="weather-section"
@@ -37,15 +46,7 @@ function Weather () {
           className="temp-box"
         >
           <p>{ renderCondition > 0 ? api.main.temp : null }</p>
-          { renderCondition > 0 ? weatherIcon.map((e) => {
-            // console.log('------aqui------');
-            if (e.weather === api.weather[0].main) {
-              // console.log(e.weather);
-              console.log(e.icon);
-              console.log(api.weather[0].main);
-              return <img src={ e.icon } alt="" />
-            };
-          }) : <i className="fi fi-rr-search" />}
+          {renderCondition > 0 ? <img src={ icon } alt={ weather } /> : null}
         </div>
         <div
           className="city-box"
