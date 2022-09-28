@@ -3,6 +3,7 @@ import SearchBar from "./components/SearchBar";
 import WeatherContext from "./data/context";
 import { getWeather } from "./api/funcs";
 import WeatherElements from "./components/WeatherElements";
+import Weather from "./components/Weather";
 import './styles/weather.css'
 
 function App () {
@@ -11,13 +12,14 @@ function App () {
     coordinates,
     search,
     setSearch,
+    setApi,
   } = useContext(WeatherContext);
 
   useEffect(() => {
     if (search === true) {
       setTimeout(async () => {
         const result = await getWeather(coordinates.lan, coordinates.lon);
-        console.log(result);
+        setApi(result)
       }, 1000);
     };
     setSearch(false);
@@ -30,16 +32,20 @@ function App () {
       <section
         className="section-box"
       >
-        <p> {coordinates.city} </p>
+         <Weather />
          <SearchBar />
-         <aside>
-          <WeatherElements />
-          <WeatherElements />
-        </aside>
-        <aside>
-          <WeatherElements />
-          <WeatherElements />
-        </aside>
+         <section
+          className="section-elements" 
+        >
+          <aside>
+            <WeatherElements />
+            <WeatherElements />
+          </aside>
+          <aside>
+            <WeatherElements />
+            <WeatherElements />
+          </aside>
+        </section>
       </section>
       {/* <div>
         Futura fetuare de mudança de idioma

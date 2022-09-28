@@ -5,7 +5,7 @@ function WeatherElements({ children }) {
     <div
       className="weather-icon"
     >
-      { children } futuro icon
+      { children }
     </div>
   );
 };

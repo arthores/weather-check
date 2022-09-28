@@ -1,4 +1,4 @@
-export interface InCities {
+interface InCities {
   city: string,
   lan: number,
   lon: number,
