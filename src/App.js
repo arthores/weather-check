@@ -2,9 +2,9 @@ import React, { useContext, useEffect } from "react";
 import SearchBar from "./components/SearchBar";
 import WeatherContext from "./data/context";
 import { getWeather } from "./api/funcs";
-import WeatherElements from "./components/WeatherElements";
 import Weather from "./components/Weather";
 import './styles/weather.css'
+import Elements from "./components/Elements";
 
 function App () {
 
@@ -34,22 +34,11 @@ function App () {
       >
          <Weather />
          <SearchBar />
-         <section
-          className="section-elements" 
-        >
-          <aside>
-            <WeatherElements />
-            <WeatherElements />
-          </aside>
-          <aside>
-            <WeatherElements />
-            <WeatherElements />
-          </aside>
-        </section>
-      </section>
+         <Elements />
       {/* <div>
         Futura fetuare de mudança de idioma
       </div> */}
+      </section>
     </main>
   )
 }

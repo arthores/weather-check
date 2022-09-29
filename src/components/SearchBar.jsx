@@ -34,7 +34,10 @@ function SearchBar () {
     setInput(e.target.value);
   };
 
-  const searchCity = () => setSearch(true);
+  const searchCity = () => {
+    setSearch(true);
+    setInput('');
+  };
 
   return (
     <section

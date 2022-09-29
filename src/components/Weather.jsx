@@ -24,17 +24,17 @@ function Weather () {
   const renderCondition = Object.keys(api).length;
   const weather = renderCondition > 0 ? api.weather[0].main : null;
 
-  const caseIcon = weatherIcon.filter((e) => e.weather === weather);
-  const icon = caseIcon.length > 0 ? caseIcon[0].icon : null;
+  const filterIcon = weatherIcon.filter((e) => e.weather === weather);
+  const icon = filterIcon.length > 0 ? filterIcon[0].icon : null;
 
-  const temp = () => {
+  const temp = (typeTemp) => {
     if (renderCondition > 0) {
-      const celcius = Math.floor(api.main.temp - 273.15).toString().replace('.',',');
-      const fahrenheit = Math.floor((api.main.temp - 273.15) * 9/5 + 32).toString().replace('.', ',');
+      const celcius = Math.floor(typeTemp - 273.15).toString().replace('.',',') + '°C';
+      const fahrenheit = Math.floor((typeTemp- 273.15) * 9/5 + 32).toString().replace('.', ',') + '°F';
       return [celcius, fahrenheit];
     }
   }
-  console.log(temp());
+
   
 
   return (
@@ -42,19 +42,12 @@ function Weather () {
       className="weather-section"
     >
       <aside
-        className="temp-aside"
-      >
-        <button>
-          C
-        </button>
-      </aside>
-      <aside
         className="weather-aside"
       >
         <div
           className="temp-box"
         >
-          <p>{ renderCondition > 0 ? `${temp()[0]}°C` : `${temp()[1]}°F` }</p>
+          <p>{ renderCondition > 0 ? `${temp(api.main.temp)[0]}` : null }</p>
           {renderCondition > 0 ? <img src={ icon } alt={ `${weather} icon` } /> : null}
         </div>
         <div
@@ -62,6 +55,13 @@ function Weather () {
         >
           { api.name }
         </div>
+      </aside>
+      <aside
+        className="btn-aside"
+      >
+        <button>
+          C
+        </button>
       </aside>
     </section>
   )
