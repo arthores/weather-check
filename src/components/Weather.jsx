@@ -26,7 +26,16 @@ function Weather () {
 
   const caseIcon = weatherIcon.filter((e) => e.weather === weather);
   const icon = caseIcon.length > 0 ? caseIcon[0].icon : null;
-  console.log(caseIcon);
+
+  const temp = () => {
+    if (renderCondition > 0) {
+      const celcius = Math.floor(api.main.temp - 273.15).toString().replace('.',',');
+      const fahrenheit = Math.floor((api.main.temp - 273.15) * 9/5 + 32).toString().replace('.', ',');
+      return [celcius, fahrenheit];
+    }
+  }
+  console.log(temp());
+  
 
   return (
     <section
@@ -45,8 +54,8 @@ function Weather () {
         <div
           className="temp-box"
         >
-          <p>{ renderCondition > 0 ? api.main.temp : null }</p>
-          {renderCondition > 0 ? <img src={ icon } alt={ weather } /> : null}
+          <p>{ renderCondition > 0 ? `${temp()[0]}°C` : `${temp()[1]}°F` }</p>
+          {renderCondition > 0 ? <img src={ icon } alt={ `${weather} icon` } /> : null}
         </div>
         <div
           className="city-box"
