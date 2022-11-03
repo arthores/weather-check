@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import WeatherContext from "./context";
 
 function Provider({ children }) {

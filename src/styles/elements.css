@@ -10,8 +10,16 @@
 }
 
 .weather-icon {
+  display: flex;
+  align-items: center;
   padding: 10px;
   margin: 8px;
-  border: 1px solid red;
+  border: 1px solid white;
+  border-radius: 20px;
+  font-size: 0.90rem;
   width: 12vw;
+}
+
+.icon {
+  filter: invert(92%) sepia(79%) saturate(264%) hue-rotate(301deg) brightness(109%) contrast(105%);
 }

@@ -21,18 +21,15 @@ function Weather () {
     },
   ];
 
-  const renderCondition = Object.keys(api).length;
-  const weather = renderCondition > 0 ? api.weather[0].main : null;
+  const weather = api.weather[0].main;
 
   const filterIcon = weatherIcon.filter((e) => e.weather === weather);
   const icon = filterIcon.length > 0 ? filterIcon[0].icon : null;
 
   const temp = (typeTemp) => {
-    if (renderCondition > 0) {
       const celcius = Math.floor(typeTemp - 273.15).toString().replace('.',',') + '°C';
       const fahrenheit = Math.floor((typeTemp- 273.15) * 9/5 + 32).toString().replace('.', ',') + '°F';
       return [celcius, fahrenheit];
-    }
   }
 
   
@@ -47,8 +44,12 @@ function Weather () {
         <div
           className="temp-box"
         >
-          <p>{ renderCondition > 0 ? `${temp(api.main.temp)[0]}` : null }</p>
-          {renderCondition > 0 ? <img src={ icon } alt={ `${weather} icon` } /> : null}
+          <p
+            className="temp"
+          >
+            { `${temp(api.main.temp)[0]}` }
+          </p>
+          <img src={ icon } alt={ `${weather} icon` } className="temp-icon"/>
         </div>
         <div
           className="city-box"

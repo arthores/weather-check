@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { GoSearch } from 'react-icons/go';
 import WeatherContext from "../data/context";
-import { locations } from "../data/locations.ts";
+import { locations } from "../data/locations";
 import '../styles/searchBar.css'
 
 function SearchBar () {
@@ -50,9 +50,10 @@ function SearchBar () {
         autoComplete="on"
         value={ input }
         onChange={ handleChange }
+        placeholder="Select one city"
       />
       <datalist id="cities" >
-        { locations.map((e) => (
+        { locations.map((e: inCities[]) => (
           <option
             key={ Object.keys(e) }
             value={ e.city } />

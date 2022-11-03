@@ -3,8 +3,8 @@ import SearchBar from "./components/SearchBar";
 import WeatherContext from "./data/context";
 import { getWeather } from "./api/funcs";
 import Weather from "./components/Weather";
-import './styles/weather.css'
 import Elements from "./components/Elements";
+import './styles/weather.css'
 
 function App () {
 
@@ -13,6 +13,7 @@ function App () {
     search,
     setSearch,
     setApi,
+    api,
   } = useContext(WeatherContext);
 
   useEffect(() => {
@@ -25,6 +26,8 @@ function App () {
     setSearch(false);
   }, [search]);
 
+  const renderCondition = Object.keys(api).length;
+
   return (
     <main
       className="main-box"
@@ -32,9 +35,9 @@ function App () {
       <section
         className="section-box"
       >
-         <Weather />
+         { renderCondition > 0 ? <Weather /> : null }
          <SearchBar />
-         <Elements />
+         { renderCondition > 0 ? <Elements /> : null }
       {/* <div>
         Futura fetuare de mudança de idioma
       </div> */}

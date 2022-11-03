@@ -25,6 +25,15 @@
   /* border: 1px solid purple; */
 }
 
+.temp {
+  font-size:3em;
+}
+
+.temp-icon {
+  font-size: 20rem;
+  filter: invert(92%) sepia(79%) saturate(264%) hue-rotate(301deg) brightness(109%) contrast(105%);
+}
+
 .city-box {
   display: flex;
   /* border: 1px solid deeppink; */
@@ -32,6 +41,8 @@
   height: 30%;
   justify-content: center;
   align-items: center;
+  text-transform: uppercase;
+  font-size: 2em;
 }
 
 .btn-aside {

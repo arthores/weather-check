@@ -11,24 +11,18 @@ function WeatherElements(icon) {
     api
   } = useContext(WeatherContext);
 
-  const renderCondition = Object.keys(api).length;
-
   const temp = (typeTemp) => {
-    if (renderCondition > 0) {
       const celcius = Math.floor(typeTemp - 273.15).toString().replace('.',',') + '°C';
       const fahrenheit = Math.floor((typeTemp- 273.15) * 9/5 + 32).toString().replace('.', ',') + '°F';
       return [celcius, fahrenheit];
-    }
   }
 
   const numbers = () => {
-    if (renderCondition > 0) {
       const max = temp(api.main.temp_max)[0];
       const min = temp(api.main.temp_min)[0];
       const humidity = `${api.main.humidity} %`;
       const wind = `${api.wind.speed} m/s`;
       return [min, max, humidity, wind]
-    }
   }
 
   const iconsWeather = [
@@ -64,8 +58,8 @@ function WeatherElements(icon) {
     <div
       className="weather-icon"
     >
-      <img src={ typeIcon } alt={ `${filterIcon[0].type} icon` } />
-      { `${filterIcon[0].type} ${filterIcon[0].resolve}` }
+      <img src={ typeIcon } alt={ `${filterIcon[0].type} icon` } className="icon" />
+      { `${(filterIcon[0].type).toUpperCase()} ${filterIcon[0].resolve}` }
     </div>
   );
 };
