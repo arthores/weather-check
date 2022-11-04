@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { GoSearch } from 'react-icons/go';
 import WeatherContext from "../data/context";
-import { locations } from "../data/locations";
+import { locations } from "../data/locations.ts";
 import '../styles/searchBar.css'
 
 function SearchBar () {
@@ -53,7 +53,7 @@ function SearchBar () {
         placeholder="Select one city"
       />
       <datalist id="cities" >
-        { locations.map((e: inCities[]) => (
+        { locations.map((e) => (
           <option
             key={ Object.keys(e) }
             value={ e.city } />

@@ -1,7 +1,7 @@
 .section-elements {
   display: flex;
   flex-direction: row;
-  /* border: 1px double red; */
+  border: 1px double red;
   padding: 10px;
   width: 90%;
   height: 36%;
@@ -22,4 +22,8 @@
 
 .icon {
   filter: invert(92%) sepia(79%) saturate(264%) hue-rotate(301deg) brightness(109%) contrast(105%);
+}
+
+@media (max-width: 375px) and (orientation: portrait) {
+  
 }

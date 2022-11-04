@@ -1,5 +1,6 @@
 .section-search {
   align-items: center;
+  border: 1px solid green;
   display: flex;
   flex-direction: row;
   height: 18%;
@@ -36,4 +37,8 @@
 .icon-search {
   width: 80%;
   height: 60%;
+}
+
+@media (max-width: 375px) and (orientation: portrait) {
+  
 }
