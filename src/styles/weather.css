@@ -35,7 +35,7 @@
   .main-box {
     align-items: center;
     background-color: #222222;
-    border: 1px solid pink;
+    /* border: 1px solid pink; */
     opacity: 0.8;
     height: fit-content;
     width: 100vw;
@@ -43,7 +43,7 @@
 
   .section-box {
     align-items: center;
-    border: 1px dotted red;
+    /* border: 1px dotted red; */
     border-radius: 0;
     background-color: #161515;
     display: flex;

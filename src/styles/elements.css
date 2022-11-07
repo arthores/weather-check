@@ -10,18 +10,18 @@
 }
 
 .weather-icon {
-  /* display: flex; */
-  /* align-items: center; */
-  /* padding: 10px; */
-  /* margin: 5px; */
-  font-size: 0.90rem;
-  width: 7vw;
+  /* border: 1px solid purple; */
+  display: flex;
+  width: 7rem;
 }
 
 .icon {
+  /* border: 1px solid yellow; */
   filter: invert(92%) sepia(79%) saturate(264%) hue-rotate(301deg) brightness(109%) contrast(105%);
 }
 
 @media (max-width: 375px) and (orientation: portrait) {
-  
+  .weather-icon {
+    margin-bottom: 7.38rem;
+  }
 }

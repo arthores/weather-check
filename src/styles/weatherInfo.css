@@ -8,7 +8,6 @@
 
 .weather-aside {
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   flex-direction: column;
   /* border: 1px solid blue; */
@@ -36,8 +35,8 @@
 .temp-icon {
   /* border: 1px solid yellow; */
   filter: invert(92%) sepia(79%) saturate(264%) hue-rotate(301deg) brightness(109%) contrast(105%);
-  height: 3em;
-  width: 3em;
+  height: 4.3em;
+  width: 4.3em;
 }
 
 .city-box {
@@ -54,11 +53,21 @@
 .btn-aside {
   display: flex;
   align-items: center;
-  border: 1px dotted red;
+  /* border: 1px dotted red; */
   width: 20%;
   height: 100%;
 }
 
 @media (max-width: 375px) and (orientation: portrait) {
-  
+  /* .temp-box {
+    border: 1px solid pink;
+  } */
+
+  .temp {
+    padding: 10px;
+  }
+
+  .temp-max-min{
+    margin-top: 3rem;
+  }
 }
