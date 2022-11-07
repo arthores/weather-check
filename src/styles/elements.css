@@ -20,7 +20,7 @@
   filter: invert(92%) sepia(79%) saturate(264%) hue-rotate(301deg) brightness(109%) contrast(105%);
 }
 
-@media (max-width: 375px) and (orientation: portrait) {
+@media (max-width: 400px) and (orientation: portrait) {
   .weather-icon {
     margin-bottom: 7.38rem;
   }
