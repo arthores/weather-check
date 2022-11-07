@@ -1,6 +1,6 @@
 .section-search {
   align-items: center;
-  border: 1px solid green;
+  /* border: 1px solid green; */
   display: flex;
   flex-direction: row;
   height: 18%;
@@ -15,7 +15,7 @@
   color: #aaa;
   background: transparent;
   border: 0 1px;
-  border-bottom: 2px solid black;
+  /* border-bottom: 2px solid black; */
   transition: linear 1s;
   /* transform: scaleX(1); */
   transform-origin: left;

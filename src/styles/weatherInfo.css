@@ -1,7 +1,7 @@
 .weather-section {
   display: flex;
   flex-direction: row;
-  border: 1px solid green;
+  /* border: 1px solid green; */
   height: 50%;
   width: 80%;
 }
@@ -22,16 +22,22 @@
   align-items: center;
   width: 100%;
   height: 70%;
-  border: 1px solid purple;
+  /* border: 1px solid purple; */
 }
 
 .temp {
   font-size:3em;
 }
 
+.temp-max-min{
+  font-size: 0.4em;
+}
+
 .temp-icon {
-  font-size: 20rem;
+  /* border: 1px solid yellow; */
   filter: invert(92%) sepia(79%) saturate(264%) hue-rotate(301deg) brightness(109%) contrast(105%);
+  height: 3em;
+  width: 3em;
 }
 
 .city-box {
@@ -48,7 +54,7 @@
 .btn-aside {
   display: flex;
   align-items: center;
-  /* border: 1px dotted red; */
+  border: 1px dotted red;
   width: 20%;
   height: 100%;
 }

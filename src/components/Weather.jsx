@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import WeatherContext from "../data/context";
 import sunny from '../icons/sunny.png';
 import cloudsNight from '../icons/cloudsNight.png'
+import { temp } from "../api/funcs";
 import '../styles/weatherInfo.css';
 
 function Weather () {
@@ -26,11 +27,7 @@ function Weather () {
   const filterIcon = weatherIcon.filter((e) => e.weather === weather);
   const icon = filterIcon.length > 0 ? filterIcon[0].icon : null;
 
-  const temp = (typeTemp) => {
-      const celcius = Math.floor(typeTemp - 273.15).toString().replace('.',',') + '°C';
-      const fahrenheit = Math.floor((typeTemp- 273.15) * 9/5 + 32).toString().replace('.', ',') + '°F';
-      return [celcius, fahrenheit];
-  }
+  
 
   
 
@@ -48,6 +45,11 @@ function Weather () {
             className="temp"
           >
             { `${temp(api.main.temp)[0]}` }
+            <p
+              className="temp-max-min"
+            >
+              { `${temp(api.main.temp_max)[0]}  ${temp(api.main.temp_min)[0]}` }
+            </p>
           </p>
           <img src={ icon } alt={ `${weather} icon` } className="temp-icon"/>
         </div>

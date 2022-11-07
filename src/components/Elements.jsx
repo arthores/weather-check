@@ -9,22 +9,12 @@ function Elements() {
     <section
       className="section-elements"
     >
-      <aside>
-        <WeatherElements
-          icon='max-temp'
-        />
-        <WeatherElements
-          icon='min-temp'
-        />
-      </aside>
-      <aside>
         <WeatherElements
           icon='humidity'
         />
         <WeatherElements
           icon='wind'
         />
-      </aside>
     </section>
   );
 }

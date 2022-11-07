@@ -7,3 +7,9 @@ export const getWeather = async (lan, lon) => {
   const get = await axios.get(url);
   return get.data;
 }
+
+export const temp = (typeTemp) => {
+  const celcius = Math.floor(typeTemp - 273.15).toString().replace('.',',') + '°C';
+  const fahrenheit = Math.floor((typeTemp- 273.15) * 9/5 + 32).toString().replace('.', ',') + '°F';
+  return [celcius, fahrenheit];
+}
