@@ -1,6 +1,6 @@
 .section-elements {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   /* border: 1px double red; */
   padding: 10px;
   width: 90%;
@@ -18,6 +18,31 @@
 .icon {
   /* border: 1px solid yellow; */
   filter: invert(92%) sepia(79%) saturate(264%) hue-rotate(301deg) brightness(109%) contrast(105%);
+}
+
+.aside-clime {
+  display: flex;
+  flex-direction: row;
+  /* border: 1px solid purple; */
+  height: 20%;
+  width: 80%;
+}
+
+.aside-elements {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  height: 40%;
+  /* border: 1px solid green; */
+  padding: 10px;
+}
+
+.aside-sun {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  /* border: 1px solid pink; */
+  height: 40%;
 }
 
 @media (max-width: 400px) and (orientation: portrait) {
