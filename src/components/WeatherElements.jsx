@@ -36,7 +36,7 @@ function WeatherElements(icon) {
       className="weather-icon"
     >
       <img src={ typeIcon } alt={ `${filterIcon[0].type} icon` } className="icon" />
-      { `${filterIcon[0].resolve}` }
+      { `\n${filterIcon[0].resolve}` }
     </div>
   );
 };
