@@ -40,9 +40,15 @@
 .aside-sun {
   display: flex;
   flex-direction: row;
+  align-items: center;
   width: 100%;
-  /* border: 1px solid pink; */
-  height: 40%;
+  border: 1px solid pink;
+  height: 45%;
+}
+
+.span-sun {
+  display: flex;
+  flex-direction: column;
 }
 
 @media (max-width: 400px) and (orientation: portrait) {

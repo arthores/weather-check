@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import WeatherElements from "./WeatherElements";
 import WeatherContext from "../data/context";
+import { unixConvert } from "../api/funcs";
 import '../styles/elements.css';
 
 function Elements() {
@@ -10,6 +11,7 @@ function Elements() {
   } = useContext(WeatherContext);
 
   const description = api.weather[0].description;
+  console.log(unixConvert(api.dt));
 
   return (
     <section
@@ -33,7 +35,17 @@ function Elements() {
       <aside
         className="aside-sun"
       >
-        <span>Sunrise    sunset</span>
+        <span
+          className="span-sun"
+        >
+          {`${unixConvert(api.sys.sunrise)} Sunrise`}
+        </span>
+        <span
+          className="span-sun"
+        >
+          
+          {`${unixConvert(api.sys.sunset)} Sunset`}
+        </span>
       </aside>
     </section>
   );

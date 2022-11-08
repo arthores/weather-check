@@ -13,3 +13,14 @@ export const temp = (typeTemp) => {
   const fahrenheit = Math.floor((typeTemp- 273.15) * 9/5 + 32).toString().replace('.', ',') + '°F';
   return [celcius, fahrenheit];
 }
+
+export const unixConvert = (unix) => {
+  // https://stackoverflow.com/questions/847185/convert-a-unix-timestamp-to-time-in-javascript
+  const date = new Date(unix * 1000);
+  const hours = date.getHours();
+  const minutes = "0" + date.getMinutes();
+
+  const formattedTime = hours + ":" + minutes.substr(-2);
+
+  return formattedTime;
+}
