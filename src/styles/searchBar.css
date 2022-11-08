@@ -11,27 +11,27 @@
   font-size: x-large;
   text-align: center;
   height: 90%;
-  width: 80%;
+  line-height: 90%;
+  width: 98%;
   color: #aaa;
   background: transparent;
-  border: 0 1px;
-  /* border-bottom: 2px solid black; */
+  border: 1px solid blue;
   transition: linear 1s;
-  /* transform: scaleX(1); */
-  transform-origin: left;
+  margin: 0;
+  padding: 0;
 }
 
 .input-search:focus {
-  outline: 0;
-  border: 0;
-  border-bottom: 2px solid #ff0043;
-  transform: translateX(1);
+  border: 1.5px solid blue;
 }
 
 .btn-search {
-  border-radius: 32px;
+  border: none;
   height: 80%;
   width: 15%;
+  margin-left: -17%;
+  display: inline-block;
+  background: #161515;
 }
 
 .icon-search {
@@ -40,5 +40,7 @@
 }
 
 @media (max-width: 400px) and (orientation: portrait) {
-  
+  .input-search {
+    margin: 0 0 0 3px;
+  }
 }
