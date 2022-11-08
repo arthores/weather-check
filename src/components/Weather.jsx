@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import WeatherContext from "../data/context";
-import sunny from '../icons/sunny.png';
-import cloudsNight from '../icons/cloudsNight.png'
+import { weatherIcon } from "../data/icons";
 import { temp } from "../api/funcs";
 import '../styles/weatherInfo.css';
 
@@ -11,25 +10,10 @@ function Weather () {
     api,
   } = useContext(WeatherContext);
 
-  const weatherIcon = [
-    {
-      weather: 'Clear',
-      icon: sunny
-    },
-    {
-      weather: 'Clouds',
-      icon: cloudsNight
-    },
-  ];
-
   const weather = api.weather[0].main;
 
-  const filterIcon = weatherIcon.filter((e) => e.weather === weather);
+  const filterIcon = weatherIcon.filter((e) => e.weather === weather ? e : e[0]);
   const icon = filterIcon.length > 0 ? filterIcon[0].icon : null;
-
-  
-
-  
 
   return (
     <section
