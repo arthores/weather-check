@@ -14,6 +14,7 @@ function App () {
     setSearch,
     setApi,
     api,
+    actualTemp,
   } = useContext(WeatherContext);
 
   useEffect(() => {
@@ -28,12 +29,25 @@ function App () {
 
   const renderCondition = Object.keys(api).length;
 
+  const background = () => {
+    const numTemp = Number(actualTemp);
+    if (numTemp >= 25) {
+      return 'hot';
+    }
+    if (numTemp <= 18) {
+      return 'cold';
+    }
+    else {
+      return null;
+    }
+  }
+
   return (
     <main
       className="main-box"
     >
       <section
-        className="section-box"
+        className={`section-box ${background()}`}
       >
          { renderCondition > 0 ? <Weather /> : null }
          <SearchBar />

@@ -11,7 +11,6 @@ function Elements() {
   } = useContext(WeatherContext);
 
   const description = api.weather[0].description;
-  console.log(unixConvert(api.dt));
 
   return (
     <section
