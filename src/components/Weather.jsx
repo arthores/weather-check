@@ -38,7 +38,7 @@ function Weather () {
             <p
               className="temp-max-min"
             >
-              { `${temp(api.main.temp_max, "C")}  ${temp(api.main.temp_min, "C")}` }
+              { `${temp(api.main.temp_max, "C")} / ${temp(api.main.temp_min, "C")}` }
             </p>
           </p>
           <img src={ icon } alt={ `${weather} icon` } className="temp-icon"/>
