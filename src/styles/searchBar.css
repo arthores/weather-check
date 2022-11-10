@@ -13,16 +13,18 @@
   height: 90%;
   line-height: 90%;
   width: 98%;
-  color: #aaa;
+  color: rgb(29, 29, 29);
   background: transparent;
-  border: 1px solid blue;
-  transition: linear 1s;
+  border: none;
+  border-radius: 30px;
   margin: 0;
   padding: 0;
+  box-shadow: 3px 4px 5px 0px rgba(35,35,35,1);
 }
 
 .input-search:focus {
-  border: 1.5px solid blue;
+  border: none;
+  outline: none;
 }
 
 .btn-search {
