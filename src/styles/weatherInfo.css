@@ -55,7 +55,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px dotted red;
+  /* border: 1px dotted red; */
   width: 20%;
   height: 100%;
 }
