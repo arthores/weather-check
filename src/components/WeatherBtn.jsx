@@ -14,6 +14,7 @@ function WeatherBtn ({ value }) {
   return (
     <button
       type="button"
+      className="change-temp"
       onClick={ clickChange }
       value={ value }
     >
