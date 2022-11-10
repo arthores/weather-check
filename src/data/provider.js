@@ -8,6 +8,7 @@ function Provider({ children }) {
   const [search, setSearch] = useState(false);
   const [api, setApi] = useState({});
   const [actualTemp, setTemp] = useState('');
+  const [typeTemp, setType] = useState("C");
 
   const store = {
     input,
@@ -15,11 +16,13 @@ function Provider({ children }) {
     search,
     api,
     actualTemp,
+    typeTemp,
     setInput,
     setCoordinates,
     setSearch,
     setApi,
     setTemp,
+    setType,
   }
 
   return (

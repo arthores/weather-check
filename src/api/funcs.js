@@ -8,9 +8,9 @@ export const getWeather = async (lan, lon) => {
   return get.data;
 }
 
-export const temp = (typeTemp, type) => {
-  const celcius = Math.floor(typeTemp - 273.15).toString().replace('.',',');
-  const fahrenheit = Math.floor((typeTemp- 273.15) * 9/5 + 32).toString().replace('.', ',');
+export const temp = (tempNum, type) => {
+  const celcius = Math.floor(tempNum - 273.15).toString().replace('.',',');
+  const fahrenheit = Math.floor((tempNum- 273.15) * 9/5 + 32).toString().replace('.', ',');
   if (type === "C") return celcius;
   if (type === "F") return fahrenheit;
   else return null;

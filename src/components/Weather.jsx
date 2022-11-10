@@ -4,22 +4,26 @@ import { weatherIcon } from "../data/icons";
 import { temp } from "../api/funcs";
 import '../styles/weatherInfo.css';
 import { useEffect } from "react";
+import WeatherBtn from "./WeatherBtn";
 
 function Weather () {
 
   const {
     api,
     setTemp,
+    typeTemp,
   } = useContext(WeatherContext);
 
   useEffect(()=> {
-    setTemp(temp(api.main.temp, "C"));
+    setTemp(temp(api.main.temp, typeTemp));
   }, [api])
 
   const weather = api.weather[0].main;
 
   const filterIcon = weatherIcon.filter((e) => e.weather === weather ? e : e[0]);
   const icon = filterIcon.length > 0 ? filterIcon[0].icon : null;
+
+  console.log(typeTemp);
 
   return (
     <section
@@ -34,11 +38,11 @@ function Weather () {
           <p
             className="temp"
           >
-            { `${temp(api.main.temp, "C")}` }
+            { `${temp(api.main.temp, typeTemp)}°${typeTemp}` }
             <p
               className="temp-max-min"
             >
-              { `${temp(api.main.temp_max, "C")} / ${temp(api.main.temp_min, "C")}` }
+              { `${temp(api.main.temp_max, typeTemp) }°${typeTemp} / ${temp(api.main.temp_min, typeTemp)}°${typeTemp}` }
             </p>
           </p>
           <img src={ icon } alt={ `${weather} icon` } className="temp-icon"/>
@@ -52,9 +56,8 @@ function Weather () {
       <aside
         className="btn-aside"
       >
-        <button>
-          C
-        </button>
+        <WeatherBtn value="C" />
+        <WeatherBtn value="F" />
       </aside>
     </section>
   )
