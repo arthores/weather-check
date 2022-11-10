@@ -44,6 +44,7 @@
 
 @media (max-width: 400px) and (orientation: portrait) {
   .input-search {
+    height: 60%;
     margin: 0 0 0 3px;
   }
 }
